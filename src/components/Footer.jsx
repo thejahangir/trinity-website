@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
+import trinityLogo from '../assets/trinity-logo.png';
 
 export default function Footer({ onRequestDemo }) {
 
@@ -14,7 +15,7 @@ export default function Footer({ onRequestDemo }) {
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="flex items-center gap-3">
               <img 
-                src="/trinity-logo.png" 
+                src={trinityLogo} 
                 alt="Trinity AI Boston Logo" 
                 className="h-10 w-auto object-contain"
               />

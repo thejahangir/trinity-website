@@ -5,6 +5,7 @@ import {
   CheckCircle2, 
   Lock
 } from 'lucide-react';
+import heroLegalExecutive from '../assets/hero-legal-executive.jpg';
 
 export default function Hero({ onRequestDemo }) {
   const parallaxRef = useRef(null);
@@ -39,12 +40,12 @@ export default function Hero({ onRequestDemo }) {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] pt-36 pb-20 md:pt-44 md:pb-28 bg-trinity-hero text-white overflow-hidden border-b border-[#182744] flex items-center">
+    <section className="relative w-full min-h-screen min-h-[100dvh] md:h-screen md:max-h-screen bg-trinity-hero text-white overflow-hidden border-b border-[#182744] flex items-center justify-center">
       
       {/* Background Image Layer: Corporate Legal Executive in Executive Office */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         
-        {/* Parallax Container: Has generous 30% top/bottom bleed for fluid vertical glide */}
+        {/* Parallax Container: Generous 30% top/bottom bleed for fluid vertical glide */}
         <div 
           ref={parallaxRef}
           className="absolute -top-[30%] -left-[5%] -right-[5%] w-[110%] h-[160%] will-change-transform pointer-events-none select-none"
@@ -53,7 +54,7 @@ export default function Hero({ onRequestDemo }) {
           }}
         >
           <img 
-            src="/hero-legal-executive.jpg" 
+            src={heroLegalExecutive} 
             alt="Trinity AI Legal Executive in Corporate Office Interior" 
             className="w-full h-full object-cover object-right lg:object-[80%_center] opacity-95 select-none"
           />
@@ -77,11 +78,12 @@ export default function Hero({ onRequestDemo }) {
       {/* Subtle Ambient Radial Glow */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-trinity-blue/15 rounded-full blur-[140px] pointer-events-none z-[1]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* Main Content: Vertically Centered Across Any Viewport */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20 md:pt-24 pb-8 md:pb-10 my-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
           {/* Left Column: Simple, Confident Enterprise Message */}
-          <div className="lg:col-span-7 space-y-7 text-left">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-left">
             
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/50 text-xs font-semibold tracking-wider uppercase text-trinity-lightBlue backdrop-blur-md">
@@ -92,20 +94,21 @@ export default function Hero({ onRequestDemo }) {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[62px] font-extrabold font-display leading-[1.08] tracking-tight text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] xl:text-[62px] font-extrabold font-display leading-[1.08] tracking-tight text-white">
               AI That Turns Complex Evidence Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-trinity-lightBlue to-blue-100">Defensible Decisions</span>.
             </h1>
 
             {/* Supporting Text */}
-            <p className="text-lg sm:text-xl text-slate-200 font-normal leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-200 font-normal leading-relaxed max-w-xl">
               Purpose-built enterprise intelligence for complex, high-stakes decisions. We combine domain expertise, evidence grounding, and human oversight to deliver decisions you can defend.
             </p>
 
             {/* Action Buttons */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
+                type="button"
                 onClick={() => onRequestDemo("Enterprise Briefing")}
-                className="btn-primary py-3.5 px-8 text-base font-semibold group flex items-center justify-center gap-2 bg-trinity-blue hover:bg-trinity-deepBlue shadow-xl shadow-blue-950/60"
+                className="btn-primary py-3.5 px-8 text-base font-semibold group flex items-center justify-center gap-2 bg-trinity-blue hover:bg-trinity-deepBlue shadow-xl shadow-blue-950/60 cursor-pointer"
               >
                 <span>Request a Demo</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -121,7 +124,7 @@ export default function Hero({ onRequestDemo }) {
             </div>
 
             {/* Subtle Enterprise Assurance Row */}
-            <div className="pt-8 border-t border-white/10 flex flex-wrap items-center gap-6 sm:gap-8 text-xs text-slate-300 font-medium">
+            <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-wrap items-center gap-5 sm:gap-8 text-xs text-slate-300 font-medium">
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-trinity-lightBlue shrink-0" />
                 <span>100% Evidence-Grounded</span>
@@ -139,7 +142,7 @@ export default function Hero({ onRequestDemo }) {
           </div>
 
           {/* Right Column: Executive office view with subtle enterprise grounding telemetry */}
-          <div className="hidden lg:flex lg:col-span-5 relative flex-col justify-end items-end h-full min-h-[420px] pb-4 pointer-events-auto cursor-default">
+          <div className="hidden lg:flex lg:col-span-5 relative flex-col justify-end items-end h-full min-h-[260px] pb-4 pointer-events-auto cursor-default">
             <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#071120]/85 border border-[#1b2b48]/90 backdrop-blur-md shadow-2xl text-xs text-slate-300">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span className="font-mono text-[11px] text-trinity-lightBlue font-semibold">Evidence Grounding</span>
@@ -151,7 +154,6 @@ export default function Hero({ onRequestDemo }) {
         </div>
       </div>
 
-      {/* Note: The bottom blur gradient overlay has been removed per user instruction. Clean border-b border-[#182744] applied to section. */}
     </section>
   );
 }

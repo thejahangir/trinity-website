@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, ShieldCheck, ArrowRight, Building, Mail, User, Briefcase, FileText } from 'lucide-react';
+import trinityLogo from '../assets/trinity-logo.png';
 
 export default function DemoModal({ isOpen, onClose, preselectedProduct = "Both" }) {
   const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ export default function DemoModal({ isOpen, onClose, preselectedProduct = "Both"
         <div className="bg-gradient-to-r from-trinity-hero via-[#0c182c] to-trinity-hero px-6 py-6 text-white border-b border-white/10 flex items-start justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/trinity-logo.png" 
+              src={trinityLogo} 
               alt="Trinity AI Boston" 
               className="h-9 w-auto object-contain"
             />

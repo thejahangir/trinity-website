@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, ChevronRight } from 'lucide-react';
 import { navLinks } from '../../data/homepageData';
+import trinityLogo from '../../assets/trinity-logo.png';
 
 export default function HeaderV2({ onRequestDemo }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,7 @@ export default function HeaderV2({ onRequestDemo }) {
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md py-3.5 border-b border-slate-200/90 shadow-xs' 
-          : 'bg-white py-4.5 border-b border-slate-200'
+          : 'bg-white py-4 border-b border-slate-200'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +34,7 @@ export default function HeaderV2({ onRequestDemo }) {
             aria-label="Trinity AI Boston - Homepage"
           >
             <img 
-              src="/trinity-logo.png" 
+              src={trinityLogo} 
               alt="Trinity AI Boston Logo" 
               className="h-9 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
             />
@@ -61,16 +62,13 @@ export default function HeaderV2({ onRequestDemo }) {
           </nav>
 
           {/* Right Action: Clean Flat CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <span className="text-[11px] font-mono text-slate-500 font-medium hidden xl:inline-block border-l border-slate-200 pl-4">
-              Boston (HQ) • Bangalore (R&D)
-            </span>
+          <div className="hidden lg:flex items-center shrink-0">
             <button
               onClick={() => onRequestDemo("Enterprise Briefing")}
-              className="inline-flex items-center gap-2 text-xs font-semibold px-4.5 py-2.5 rounded-lg bg-slate-950 text-white hover:bg-trinity-blue transition-all duration-200 shadow-xs hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-trinity-blue"
+              className="inline-flex items-center justify-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-lg bg-slate-950 text-white hover:bg-trinity-blue transition-all duration-200 shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-trinity-blue whitespace-nowrap shrink-0 cursor-pointer"
             >
               <span>Request a Demo</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </button>
           </div>
 

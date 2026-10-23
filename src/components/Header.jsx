@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navLinks } from '../data/homepageData';
+import trinityLogo from '../assets/trinity-logo.png';
 
 export default function Header({ onRequestDemo }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +34,7 @@ export default function Header({ onRequestDemo }) {
             aria-label="Trinity AI Boston - Return to top"
           >
             <img 
-              src="/trinity-logo.png" 
+              src={trinityLogo} 
               alt="Trinity AI Boston Logo" 
               className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

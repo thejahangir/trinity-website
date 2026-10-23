@@ -35,19 +35,15 @@ export default function GoTopButton() {
     <button
       type="button"
       onClick={scrollToTop}
-      aria-label="Go to top of page"
-      className={`fixed right-6 bottom-6 md:right-8 md:bottom-8 z-40 flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-950/90 hover:bg-trinity-blue text-slate-200 hover:text-white border border-slate-700/80 hover:border-trinity-lightBlue shadow-xl shadow-black/40 backdrop-blur-md transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-trinity-lightBlue/50 select-none ${
+      aria-label="Back to top"
+      title="Back to top"
+      className={`fixed right-6 bottom-6 md:right-8 md:bottom-8 z-40 w-11 h-11 rounded-full bg-slate-950/90 hover:bg-trinity-blue text-slate-200 hover:text-white border border-slate-700/80 hover:border-trinity-lightBlue shadow-xl shadow-black/30 backdrop-blur-md flex items-center justify-center transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-trinity-lightBlue/50 select-none ${
         isVisible
-          ? 'opacity-100 translate-y-0 pointer-events-auto scale-100'
+          ? 'opacity-100 translate-y-0 pointer-events-auto scale-100 hover:scale-105 active:scale-95'
           : 'opacity-0 translate-y-4 pointer-events-none scale-90'
       }`}
     >
-      <div className="w-5 h-5 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
-        <ArrowUp className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
-      </div>
-      <span className="text-xs font-semibold font-mono uppercase tracking-wider pr-1">
-        Go top
-      </span>
+      <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
     </button>
   );
 }
