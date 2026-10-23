@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-trinity-blue: #0A6BE0;
+  --color-trinity-deep-blue: #0130A6;
+  --color-trinity-electric: #148EEC;
+  --color-trinity-light-blue: #7FD6F9;
+  --color-trinity-gold: #D9991F;
+  --color-trinity-bright-gold: #DFB643;
+  --color-trinity-deep-gold: #9E620C;
+  --color-trinity-ink: #0B1220;
+  --color-trinity-slate: #475569;
+  --color-trinity-muted: #64748B;
+  --color-trinity-border: #D9E1EA;
+  --color-trinity-canvas: #F4F7FB;
+  --color-trinity-hero: #050B16;
+}
+
+@layer base {
+  body {
+    background-color: #F4F7FB;
+    color: #0B1220;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom interactive and enterprise utility classes */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-medium text-[15px] px-6 py-3 rounded-lg bg-trinity-blue text-white transition-all duration-200 hover:bg-trinity-deepBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-trinity-blue focus-visible:ring-offset-2 active:scale-[0.98] shadow-sm;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-medium text-[15px] px-6 py-3 rounded-lg bg-white border border-trinity-blue text-trinity-blue transition-all duration-200 hover:bg-blue-50/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-trinity-blue focus-visible:ring-offset-2 active:scale-[0.98];
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center font-medium text-[15px] px-6 py-3 rounded-lg bg-white/10 border border-white/20 text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/15 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 active:scale-[0.98];
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center font-medium text-[15px] px-6 py-3 rounded-lg bg-trinity-gold text-white transition-all duration-200 hover:bg-trinity-deepGold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-trinity-gold focus-visible:ring-offset-2 active:scale-[0.98] shadow-gold-glow;
+  }
+
+  /* Enterprise Cards */
+  .card-light {
+    @apply bg-white rounded-2xl border border-trinity-border shadow-subtle transition-all duration-200 hover:shadow-enterprise hover:border-blue-200;
+  }
+
+  .card-dark {
+    @apply bg-[#0B1424] rounded-2xl border border-[#182740] shadow-xl;
+  }
+
+  /* Badges */
+  .badge-blue {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-blue-50 text-trinity-blue border border-blue-100;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-amber-50 text-trinity-deepGold border border-amber-200;
+  }
+
+  .badge-dark {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-blue-950/70 text-trinity-lightBlue border border-blue-800/40;
+  }
+}
+
+/* Subtle grid line background for hero and architecture */
+.bg-grid-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-grid-light {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(11, 18, 32, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 18, 32, 0.03) 1px, transparent 1px);
+}
+
+/* Custom subtle animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes dataFlow {
+  0% { transform: translateY(0%); opacity: 0; }
+  30% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 4s ease-in-out infinite;
+}
+
+.animate-data-flow {
+  animation: dataFlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
