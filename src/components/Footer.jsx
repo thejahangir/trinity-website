@@ -66,8 +66,9 @@ export default function Footer({ onRequestDemo }) {
               </li>
               <li>
                 <button 
-                  onClick={() => onRequestDemo("Both Platforms")}
-                  className="text-trinity-lightBlue hover:underline text-left mt-1"
+                  type="button"
+                  onClick={() => onRequestDemo && onRequestDemo("Both Platforms")}
+                  className="text-trinity-lightBlue hover:underline text-left mt-1 cursor-pointer"
                 >
                   Schedule Demo Briefing →
                 </button>
