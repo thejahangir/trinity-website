@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import VersionOne from './pages/VersionOne';
 import VersionTwo from './pages/VersionTwo';
 import VersionThree from './pages/VersionThree';
@@ -27,6 +27,18 @@ export default function App() {
     // Default to Version 1 (Cinematic) when accessing the default URL
     return 'v1';
   });
+
+  // Ensure the Trinity logo favicon is active across all design versions
+  useEffect(() => {
+    const faviconHref = '/favicon.ico';
+    let iconLink = document.querySelector("link[rel~='icon']");
+    if (!iconLink) {
+      iconLink = document.createElement('link');
+      iconLink.rel = 'icon';
+      document.head.appendChild(iconLink);
+    }
+    iconLink.href = faviconHref;
+  }, [activeVersion]);
 
   const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [selectedProductForDemo, setSelectedProductForDemo] = useState('General Inquiry');
