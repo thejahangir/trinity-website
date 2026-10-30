@@ -7,11 +7,36 @@ import shivajiImg from '../assets/Shivaji-1.png';
 import sharoonImg from '../assets/Sharoon-1.png';
 
 export const teamCategories = [
-  { id: 'all', label: 'All Leadership (7)' },
-  { id: 'executive', label: 'Executive Board (2)' },
-  { id: 'operations', label: 'Operations & Infrastructure (2)' },
-  { id: 'advisory', label: 'Advisory Leadership (2)' },
-  { id: 'engineering', label: 'AI Architecture & Labs (1)' },
+  {
+    id: 'all',
+    label: 'All Leadership (7)',
+    menuLabel: 'Our Team',
+    description: 'The full leadership and advisory group behind Engineering Scale at Trust™.',
+  },
+  {
+    id: 'executive',
+    label: 'Executive Board (2)',
+    menuLabel: 'Executive Board',
+    description: 'Co-founders who set company direction, product strategy, and board governance.',
+  },
+  {
+    id: 'operations',
+    label: 'Operations & Infrastructure (2)',
+    menuLabel: 'Ops & Infra',
+    description: 'India operations and the infrastructure that runs single-tenant client environments.',
+  },
+  {
+    id: 'advisory',
+    label: 'Advisory Leadership (2)',
+    menuLabel: 'Advisory Leadership',
+    description: 'Advisors across platform architecture, privacy, and insurance carrier integration.',
+  },
+  {
+    id: 'engineering',
+    label: 'AI Architecture & Labs (1)',
+    menuLabel: 'AI Architecture & Labs',
+    description: 'Architects of gated decision systems built for high-consequence legal work.',
+  },
 ];
 
 export const teamMembers = [
@@ -31,21 +56,6 @@ export const teamMembers = [
     skills: ['Executive Leadership', 'Product Strategy', 'Semiconductor Scaling', 'Board Governance']
   },
   {
-    id: 'ganesh-ramamoorthy',
-    name: 'Ganesh Ramamoorthy',
-    role: 'Co-Founder, Chief Technology Officer, Member of the Board',
-    category: 'executive',
-    categoryBadge: 'Co-Founder & CTO',
-    image: ganeshImg,
-    imagePosition: 'center 15%',
-    imageScale: 1.0,
-    transformOrigin: 'center 15%',
-    experience: '30+ Years',
-    highlight: 'High-Impact Engineering & Applied AI Decision Systems',
-    bio: 'Ganesh Ramamoorthy is a seasoned software engineering leader with 30+ years of experience driving innovation and leading high-impact engineering teams. He was Senior Vice President of Engineering at nference, overseeing alliance management with health system partners, and previously led product development at Pramana and TiVo. His career spans leadership roles at Veveo, Motorola, and Privafy, delivering scalable solutions across healthcare, telecom, media, and data security.',
-    skills: ['Applied AI Architecture', 'Decision Systems', 'Engineering Leadership', 'Enterprise Scale']
-  },
-  {
     id: 'chandra-mouli',
     name: 'Chandra Mouli N.',
     role: 'Head of India Operations',
@@ -59,6 +69,21 @@ export const teamMembers = [
     highlight: 'Global Delivery Scale & Greenfield Centers Across US/APAC',
     bio: 'Chandra Mouli N. is a senior operating executive with 20+ years of experience scaling enterprise workforce and delivery platforms across India, the U.S., and APAC. He has led multi-location operations, driven 3X revenue growth, managed P&Ls up to ₹15Cr+, and built greenfield delivery centers from inception to scale. His expertise in enterprise client acquisition, scalable operating models, and automation-led productivity makes him a key driver for enterprise maturity.',
     skills: ['Operations Leadership', 'Scale & Delivery', 'P&L Management', 'Global Expansion']
+  },
+  {
+    id: 'ganesh-ramamoorthy',
+    name: 'Ganesh Ramamoorthy',
+    role: 'Co-Founder, Chief Technology Officer, Member of the Board',
+    category: 'executive',
+    categoryBadge: 'Co-Founder & CTO',
+    image: ganeshImg,
+    imagePosition: 'center 15%',
+    imageScale: 1.0,
+    transformOrigin: 'center 15%',
+    experience: '30+ Years',
+    highlight: 'High-Impact Engineering & Applied AI Decision Systems',
+    bio: 'Ganesh Ramamoorthy is a seasoned software engineering leader with 30+ years of experience driving innovation and leading high-impact engineering teams. He was Senior Vice President of Engineering at nference, overseeing alliance management with health system partners, and previously led product development at Pramana and TiVo. His career spans leadership roles at Veveo, Motorola, and Privafy, delivering scalable solutions across healthcare, telecom, media, and data security.',
+    skills: ['Applied AI Architecture', 'Decision Systems', 'Engineering Leadership', 'Enterprise Scale']
   },
   {
     id: 'andrew-bates',
@@ -121,4 +146,3 @@ export const teamMembers = [
     skills: ['Legal AI Models', 'Patent Author', 'Gated Pipelines', 'High-Consequence Systems']
   }
 ];
-

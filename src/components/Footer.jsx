@@ -101,7 +101,16 @@ export default function Footer({ onNavigate, onRequestDemo }) {
                   onClick={() => onNavigate && onNavigate('about')}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
-                  About Us & Team
+                  About Us
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onNavigate && onNavigate('team')}
+                  className="hover:text-white transition-colors text-left cursor-pointer"
+                >
+                  Our Team
                 </button>
               </li>
               <li><a href="#positioning" className="hover:text-white transition-colors">Who We Build For</a></li>

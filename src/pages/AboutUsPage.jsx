@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FinalCTA from '../components/FinalCTA';
-import OurTeamSection from '../components/OurTeamSection';
 import aboutUsBg from '../assets/about-us.jpg';
 import { 
   Scale, 
@@ -124,13 +123,14 @@ export default function AboutUsPage({ onNavigate, onRequestDemo }) {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
 
-                <a
-                  href="#our-team"
-                  className="btn-secondary-dark py-3.5 px-7 text-base font-medium flex items-center justify-center gap-2 hover:bg-white/10"
+                <button
+                  type="button"
+                  onClick={() => onNavigate && onNavigate('team')}
+                  className="btn-secondary-dark py-3.5 px-7 text-base font-medium flex items-center justify-center gap-2 hover:bg-white/10 cursor-pointer"
                 >
                   <span>Meet Our Leadership</span>
                   <Users className="w-4 h-4 text-slate-400" />
-                </a>
+                </button>
               </div>
 
             </div>
@@ -218,11 +218,6 @@ export default function AboutUsPage({ onNavigate, onRequestDemo }) {
 
           </div>
         </section>
-
-        {/* =========================================================================
-            OUR TEAM SECTION: CREATIVE & MODERN LEADERSHIP SHOWCASE
-            ========================================================================= */}
-        <OurTeamSection onRequestDemo={onRequestDemo} />
 
         {/* =========================================================================
             GLOBAL LOCATIONS & CORPORATE GOVERNANCE

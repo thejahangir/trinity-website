@@ -13,9 +13,13 @@ import {
 } from 'lucide-react';
 import { teamMembers, teamCategories } from '../data/teamData';
 
-export default function OurTeamSection({ onRequestDemo }) {
-  const [activeCategory, setActiveCategory] = useState('all');
+export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' }) {
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [selectedMember, setSelectedMember] = useState(null);
+
+  useEffect(() => {
+    setActiveCategory(initialCategory || 'all');
+  }, [initialCategory]);
 
   const filteredMembers = activeCategory === 'all'
     ? teamMembers
@@ -68,7 +72,7 @@ export default function OurTeamSection({ onRequestDemo }) {
   }, [selectedMember]);
 
   return (
-    <section id="our-team" className="py-24 lg:py-32 bg-trinity-canvas text-trinity-ink relative border-b border-trinity-border overflow-hidden">
+    <section id="our-team" className="scroll-mt-28 py-24 lg:py-32 bg-trinity-canvas text-trinity-ink relative border-b border-trinity-border overflow-hidden">
       
       {/* Subtle Ambient Light Gradients */}
       <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-100/40 rounded-full blur-[140px] pointer-events-none" />
@@ -114,11 +118,19 @@ export default function OurTeamSection({ onRequestDemo }) {
         </div>
 
         {/* Compact Team Cards Grid (Light Mode) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${activeCategory === 'all' ? 'lg:grid-cols-6' : 'lg:grid-cols-3'} gap-6 lg:gap-8`}>
           {filteredMembers.map((member, index) => {
             const isSharoon = member.id === 'sharoon-saxena';
             const isLastInOddGroup = (index === filteredMembers.length - 1) && (filteredMembers.length % 3 === 1 || filteredMembers.length === 1);
-            const shouldCenterCard = isSharoon || isLastInOddGroup;
+            const isAllMembersLayout = activeCategory === 'all';
+            const shouldCenterCard = !isAllMembersLayout && (isSharoon || isLastInOddGroup);
+            const allMembersColumnClass = index < 2
+              ? 'lg:col-span-3'
+              : index < 5
+                ? 'lg:col-span-2'
+                : index === 5
+                  ? 'lg:col-span-2 lg:col-start-2'
+                  : 'lg:col-span-2 lg:col-start-4';
 
             return (
               <div
@@ -133,9 +145,11 @@ export default function OurTeamSection({ onRequestDemo }) {
                   }
                 }}
                 className={`group rounded-2xl bg-white border border-slate-200/90 shadow-subtle overflow-hidden flex flex-col justify-between hover:border-blue-400 hover:shadow-enterprise transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-trinity-blue/40 ${
-                  shouldCenterCard
-                    ? 'md:col-span-2 md:max-w-md md:mx-auto lg:col-span-1 lg:col-start-2 lg:max-w-none w-full'
-                    : ''
+                  isAllMembersLayout
+                    ? allMembersColumnClass
+                    : shouldCenterCard
+                      ? 'md:col-span-2 md:max-w-md md:mx-auto lg:col-span-1 lg:col-start-2 lg:max-w-none w-full'
+                      : ''
                 }`}
               >
                 <div>
