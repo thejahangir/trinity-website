@@ -11,19 +11,10 @@ import {
   MapPin,
   FileText
 } from 'lucide-react';
-import { teamMembers, teamCategories } from '../data/teamData';
+import { teamMembers } from '../data/teamData';
 
-export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' }) {
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
+export default function OurTeamSection({ onRequestDemo }) {
   const [selectedMember, setSelectedMember] = useState(null);
-
-  useEffect(() => {
-    setActiveCategory(initialCategory || 'all');
-  }, [initialCategory]);
-
-  const filteredMembers = activeCategory === 'all'
-    ? teamMembers
-    : teamMembers.filter((m) => m.category === activeCategory);
 
   const currentIndex = selectedMember 
     ? teamMembers.findIndex((m) => m.id === selectedMember.id) 
@@ -96,34 +87,9 @@ export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' 
           </p>
         </div>
 
-        {/* Interactive Category Filter Pills (Light Mode) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-          {teamCategories.map((cat) => {
-            const isActive = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer border ${
-                  isActive
-                    ? 'bg-trinity-blue text-white border-trinity-blue shadow-md shadow-blue-500/25 scale-105'
-                    : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-trinity-blue hover:bg-blue-50/50 shadow-xs'
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
-
         {/* Compact Team Cards Grid (Light Mode) */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${activeCategory === 'all' ? 'lg:grid-cols-6' : 'lg:grid-cols-3'} gap-6 lg:gap-8`}>
-          {filteredMembers.map((member, index) => {
-            const isSharoon = member.id === 'sharoon-saxena';
-            const isLastInOddGroup = (index === filteredMembers.length - 1) && (filteredMembers.length % 3 === 1 || filteredMembers.length === 1);
-            const isAllMembersLayout = activeCategory === 'all';
-            const shouldCenterCard = !isAllMembersLayout && (isSharoon || isLastInOddGroup);
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
+          {teamMembers.map((member, index) => {
             const allMembersColumnClass = index < 2
               ? 'lg:col-span-3'
               : index < 5
@@ -145,11 +111,7 @@ export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' 
                   }
                 }}
                 className={`group rounded-2xl bg-white border border-slate-200/90 shadow-subtle overflow-hidden flex flex-col justify-between hover:border-blue-400 hover:shadow-enterprise transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-trinity-blue/40 ${
-                  isAllMembersLayout
-                    ? allMembersColumnClass
-                    : shouldCenterCard
-                      ? 'md:col-span-2 md:max-w-md md:mx-auto lg:col-span-1 lg:col-start-2 lg:max-w-none w-full'
-                      : ''
+                  allMembersColumnClass
                 }`}
               >
                 <div>
@@ -160,6 +122,7 @@ export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' 
                         src={member.image}
                         alt={member.name}
                         style={{
+                          objectFit: member.imageFit || 'cover',
                           objectPosition: member.imagePosition || 'center top',
                           transform: member.imageScale ? `scale(${member.imageScale})` : undefined,
                           transformOrigin: member.transformOrigin || 'center center',
@@ -309,6 +272,7 @@ export default function OurTeamSection({ onRequestDemo, initialCategory = 'all' 
                       src={selectedMember.image}
                       alt={selectedMember.name}
                       style={{
+                        objectFit: selectedMember.imageFit || 'cover',
                         objectPosition: selectedMember.imagePosition || 'center top',
                         transform: selectedMember.imageScale ? `scale(${selectedMember.imageScale})` : undefined,
                         transformOrigin: selectedMember.transformOrigin || 'center center',

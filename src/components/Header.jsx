@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { navLinks } from '../data/homepageData';
-import { teamCategories } from '../data/teamData';
 import trinityLogo from '../assets/trinity-logo.png';
-
-const teamMenuGroups = teamCategories.filter((category) => category.id !== 'all');
 
 export default function Header({ onNavigate, onRequestDemo, currentPage = 'home' }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -248,7 +245,7 @@ export default function Header({ onNavigate, onRequestDemo, currentPage = 'home'
                       Our Team
                     </button>
                     <p className="mt-1 text-sm text-trinity-slate max-w-xl">
-                      Leadership and advisory, grouped by the work they own.
+                      Meet the leadership and advisory team.
                     </p>
                   </div>
                   <button
@@ -261,26 +258,6 @@ export default function Header({ onNavigate, onRequestDemo, currentPage = 'home'
                   </button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  {teamMenuGroups.map((group) => (
-                    <button
-                      key={group.id}
-                      type="button"
-                      onClick={() => goTo('team', { category: group.id })}
-                      className="group text-left rounded-xl border border-slate-200 bg-trinity-canvas px-4 py-4 hover:border-blue-300 hover:bg-white hover:shadow-md transition-all cursor-pointer"
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-bold font-display text-trinity-ink group-hover:text-trinity-blue">
-                          {group.menuLabel}
-                        </span>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-trinity-blue group-hover:translate-x-0.5 transition-all" />
-                      </div>
-                      <p className="mt-1.5 text-xs text-trinity-slate leading-relaxed">
-                        {group.description}
-                      </p>
-                    </button>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -319,17 +296,6 @@ export default function Header({ onNavigate, onRequestDemo, currentPage = 'home'
                         >
                           Our Team
                         </button>
-                        {teamMenuGroups.map((group) => (
-                          <button
-                            key={group.id}
-                            type="button"
-                            onClick={() => goTo('team', { category: group.id })}
-                            className="block w-full text-left py-2 cursor-pointer"
-                          >
-                            <span className="block text-sm font-medium text-trinity-ink">{group.menuLabel}</span>
-                            <span className="block text-xs text-trinity-slate leading-snug">{group.description}</span>
-                          </button>
-                        ))}
                       </div>
                     )}
                   </div>

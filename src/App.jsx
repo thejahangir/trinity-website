@@ -6,27 +6,24 @@ import DemoModal from './components/DemoModal';
 import GoTopButton from './components/GoTopButton';
 
 function readRoute() {
-  if (typeof window === 'undefined') return { page: 'home', category: 'all' };
+  if (typeof window === 'undefined') return { page: 'home' };
   const urlParams = new URLSearchParams(window.location.search);
   const pageParam = urlParams.get('page');
   const hash = window.location.hash;
   let page = 'home';
   if (pageParam === 'team' || hash === '#our-team') page = 'team';
   else if (pageParam === 'about' || hash === '#about' || hash === '#about-us') page = 'about';
-  const category = page === 'team' ? (urlParams.get('group') || 'all') : 'all';
-  return { page, category };
+  return { page };
 }
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(() => readRoute().page);
-  const [teamCategory, setTeamCategory] = useState(() => readRoute().category);
 
   // Keep browser URL, back/forward history, and hash synced with page state
   useEffect(() => {
     const handlePopState = () => {
       const route = readRoute();
       setCurrentPage(route.page);
-      setTeamCategory(route.category);
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -37,21 +34,15 @@ export default function App() {
     };
   }, []);
 
-  const handleNavigate = (page, options = {}) => {
-    const category = page === 'team' ? (options.category || 'all') : 'all';
+  const handleNavigate = (page) => {
     setCurrentPage(page);
-    setTeamCategory(category);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.delete('v');
       url.hash = '';
       if (page === 'about' || page === 'team') {
         url.searchParams.set('page', page);
-        if (page === 'team' && category !== 'all') {
-          url.searchParams.set('group', category);
-        } else {
-          url.searchParams.delete('group');
-        }
+        url.searchParams.delete('group');
         window.history.pushState({}, '', url);
       } else {
         url.searchParams.delete('page');
@@ -96,7 +87,6 @@ export default function App() {
         <TeamPage
           onNavigate={handleNavigate}
           onRequestDemo={handleOpenDemoModal}
-          category={teamCategory}
         />
       ) : (
         <VersionOne onNavigate={handleNavigate} onRequestDemo={handleOpenDemoModal} />

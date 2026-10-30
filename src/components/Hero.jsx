@@ -14,15 +14,48 @@ import {
   Activity
 } from 'lucide-react';
 import heroLegalExecutive from '../assets/hero-legal-executive.jpg';
+import satelliteBg from '../assets/Satelite1.jpg';
+import cosmosNexusBg from '../assets/CosmosNexus1.png';
+import legalAiBg from '../assets/AI_analyzing_legal.jpg';
 
 const SLIDE_DURATION = 6500; // 6.5 seconds per slide
 
 const slides = [
   {
+    id: 'ai-lens-for-truth',
+    badgeTag: 'TRINITY AI BOSTON',
+    badgeHighlight: 'A New Perspective on AI',
+    badgePulseColor: 'bg-trinity-electric',
+    backgroundImage: satelliteBg,
+    backgroundAlt: 'Radio telescope beneath the Milky Way',
+    backgroundPosition: 'center 42%',
+    headlineStart: 'AI as a ',
+    headlineHighlight: 'Lens for Truth',
+    headlineEnd: '',
+    gradientClass: 'from-blue-300 via-trinity-lightBlue to-blue-100',
+    description: 'Astronomers did not invent the stars—they revealed them with a telescope. AI is our telescope. Trinity AI exists to decide where the world should point it.',
+    primaryCta: {
+      label: 'Explore Trinity AI Boston',
+      href: '#positioning',
+      isModal: false
+    },
+    secondaryCta: {
+      label: 'Request a Demo',
+      action: 'Enterprise Briefing',
+      isModal: true
+    },
+    assurances: [],
+    tabTitle: 'AI as a Lens for Truth',
+    tabSubtitle: 'A new perspective on AI'
+  },
+  {
     id: 'decision-intelligence',
     badgeTag: 'TRINITY AI BOSTON',
     badgeHighlight: 'Engineering Scale at Trust™',
     badgePulseColor: 'bg-trinity-electric',
+    backgroundImage: heroLegalExecutive,
+    backgroundAlt: 'Trinity AI Boston Legal Executive in Corporate Office Interior',
+    backgroundPosition: '82% center',
     headlineStart: 'Turning Complex Evidence Into ',
     headlineHighlight: 'Defensible Positions',
     headlineEnd: '.',
@@ -51,6 +84,9 @@ const slides = [
     badgeTag: 'THE COSMOS PLATFORM',
     badgeHighlight: 'One Engine Across High-Stakes Records',
     badgePulseColor: 'bg-cyan-400',
+    backgroundImage: cosmosNexusBg,
+    backgroundAlt: 'CosmosNexus platform visual',
+    backgroundPosition: 'center center',
     headlineStart: 'One Engine Across ',
     headlineHighlight: 'High-Stakes Records',
     headlineEnd: '.',
@@ -79,6 +115,9 @@ const slides = [
     badgeTag: 'CARRIER & COUNSEL ALIGNMENT',
     badgeHighlight: 'Built Underneath the Work',
     badgePulseColor: 'bg-amber-400',
+    backgroundImage: legalAiBg,
+    backgroundAlt: 'AI analyzing legal documents',
+    backgroundPosition: 'center center',
     headlineStart: 'For the Attorney Who Signs, ',
     headlineHighlight: 'and Carrier Who Pays',
     headlineEnd: '.',
@@ -169,15 +208,15 @@ export default function Hero({ onRequestDemo }) {
     <section 
       role="region"
       aria-roledescription="carousel"
-      aria-label="Trinity AI Boston - Featured Decision Intelligence Platforms"
+      aria-label="Trinity AI Boston - Featured AI Perspectives"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       className="relative w-full min-h-screen min-h-[100dvh] bg-trinity-hero text-white overflow-hidden border-b border-[#182744] flex flex-col justify-between select-none"
     >
       
       {/* =========================================================================
-          FIXED PARALLAX BACKGROUND: SINGLE UNIFIED CORPORATE IMAGE
-          Keeps the same image fixed to viewport while page content scrolls over it
+          FIXED PARALLAX BACKGROUND
+          Keeps each slide's background fixed to the viewport while content scrolls over it
           ========================================================================= */}
       <div 
         className="absolute inset-0 pointer-events-none z-0 overflow-hidden"
@@ -187,10 +226,11 @@ export default function Hero({ onRequestDemo }) {
         }}
       >
         <div className="fixed inset-0 w-full h-full pointer-events-none">
-          <img 
-            src={heroLegalExecutive} 
-            alt="Trinity AI Boston Legal Executive in Corporate Office Interior" 
-            className="w-full h-full object-cover object-right lg:object-[82%_center] opacity-95 select-none"
+          <img
+            src={currentSlide.backgroundImage || heroLegalExecutive}
+            alt={currentSlide.backgroundAlt || 'Trinity AI Boston Legal Executive in Corporate Office Interior'}
+            style={{ objectPosition: currentSlide.backgroundPosition || '82% center' }}
+            className="w-full h-full object-cover opacity-95 select-none"
           />
           
           {/* Cinematic Multi-Stop Vanishing Gradient (High contrast on left, clear view of executive on right) */}
@@ -316,22 +356,24 @@ export default function Hero({ onRequestDemo }) {
                   </div>
 
                   {/* Enterprise Assurance Badges: Staggered Baseline Rise */}
-                  <div className="animate-cinematic-badges pt-5 sm:pt-7 border-t border-white/10 flex flex-wrap items-center gap-5 sm:gap-7 text-xs text-slate-300 font-medium">
-                    {slide.assurances.map((item, i) => {
-                      const IconComp = item.icon;
-                      return (
-                        <span key={i} className="flex items-center gap-2">
-                          {item.type === 'icon' && (
-                            <IconComp className={`w-4 h-4 ${item.iconColor} shrink-0`} />
-                          )}
-                          {item.type === 'dot' && (
-                            <span className={`w-2 h-2 rounded-full ${item.dotColor} shrink-0`} />
-                          )}
-                          <span>{item.text}</span>
-                        </span>
-                      );
-                    })}
-                  </div>
+                  {slide.assurances.length > 0 && (
+                    <div className="animate-cinematic-badges pt-5 sm:pt-7 border-t border-white/10 flex flex-wrap items-center gap-5 sm:gap-7 text-xs text-slate-300 font-medium">
+                      {slide.assurances.map((item, i) => {
+                        const IconComp = item.icon;
+                        return (
+                          <span key={i} className="flex items-center gap-2">
+                            {item.type === 'icon' && (
+                              <IconComp className={`w-4 h-4 ${item.iconColor} shrink-0`} />
+                            )}
+                            {item.type === 'dot' && (
+                              <span className={`w-2 h-2 rounded-full ${item.dotColor} shrink-0`} />
+                            )}
+                            <span>{item.text}</span>
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
 
                 </div>
 
@@ -405,7 +447,7 @@ export default function Hero({ onRequestDemo }) {
           </div>
 
           {/* Interactive Progress Tabs */}
-          <div className="grid grid-cols-3 gap-2.5 sm:gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6 w-full">
             {slides.map((slide, index) => {
               const isActive = index === activeSlide;
 

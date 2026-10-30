@@ -6,17 +6,10 @@ import OurTeamSection from '../components/OurTeamSection';
 import satelliteBg from '../assets/Satelite1.jpg';
 import { ArrowRight, Users } from 'lucide-react';
 
-export default function TeamPage({ onNavigate, onRequestDemo, category = 'all' }) {
+export default function TeamPage({ onNavigate, onRequestDemo }) {
   useEffect(() => {
-    if (category && category !== 'all') {
-      const target = document.getElementById('our-team');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-    }
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [category]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-trinity-canvas text-trinity-ink flex flex-col font-sans selection:bg-trinity-blue selection:text-white">
@@ -116,7 +109,7 @@ export default function TeamPage({ onNavigate, onRequestDemo, category = 'all' }
           </div>
         </section>
 
-        <OurTeamSection onRequestDemo={onRequestDemo} initialCategory={category} />
+        <OurTeamSection onRequestDemo={onRequestDemo} />
         <FinalCTA onRequestDemo={onRequestDemo} />
       </main>
 

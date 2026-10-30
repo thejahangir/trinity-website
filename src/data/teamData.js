@@ -6,45 +6,11 @@ import anishImg from '../assets/Anish-1.jpg';
 import shivajiImg from '../assets/Shivaji-1.png';
 import sharoonImg from '../assets/Sharoon-1.png';
 
-export const teamCategories = [
-  {
-    id: 'all',
-    label: 'All Leadership (7)',
-    menuLabel: 'Our Team',
-    description: 'The full leadership and advisory group behind Engineering Scale at Trust™.',
-  },
-  {
-    id: 'executive',
-    label: 'Executive Board (2)',
-    menuLabel: 'Executive Board',
-    description: 'Co-founders who set company direction, product strategy, and board governance.',
-  },
-  {
-    id: 'operations',
-    label: 'Operations & Infrastructure (2)',
-    menuLabel: 'Ops & Infra',
-    description: 'India operations and the infrastructure that runs single-tenant client environments.',
-  },
-  {
-    id: 'advisory',
-    label: 'Advisory Leadership (2)',
-    menuLabel: 'Advisory Leadership',
-    description: 'Advisors across platform architecture, privacy, and insurance carrier integration.',
-  },
-  {
-    id: 'engineering',
-    label: 'AI Architecture & Labs (1)',
-    menuLabel: 'AI Architecture & Labs',
-    description: 'Architects of gated decision systems built for high-consequence legal work.',
-  },
-];
-
 export const teamMembers = [
   {
     id: 'jayashankar-nanjundaswamy',
     name: 'Jayashankar Nanjundaswamy',
     role: 'Co-Founder, President and Chief Executive Officer, Member of the Board',
-    category: 'executive',
     categoryBadge: 'Co-Founder & CEO',
     image: jayashankarImg,
     imagePosition: 'center 15%',
@@ -56,10 +22,22 @@ export const teamMembers = [
     skills: ['Executive Leadership', 'Product Strategy', 'Semiconductor Scaling', 'Board Governance']
   },
   {
+    id: 'ganesh-ramamoorthy',
+    name: 'Ganesh Ramamoorthy',
+    role: 'Co-Founder, Chief Technology Officer, Member of the Board',
+    categoryBadge: 'Co-Founder & CTO',
+    image: ganeshImg,
+    imagePosition: 'center top',
+    imageFit: 'contain',
+    experience: '30+ Years',
+    highlight: 'High-Impact Engineering & Applied AI Decision Systems',
+    bio: 'Ganesh Ramamoorthy is a seasoned software engineering leader with 30+ years of experience driving innovation and leading high-impact engineering teams. He was Senior Vice President of Engineering at nference, overseeing alliance management with health system partners, and previously led product development at Pramana and TiVo. His career spans leadership roles at Veveo, Motorola, and Privafy, delivering scalable solutions across healthcare, telecom, media, and data security.',
+    skills: ['Applied AI Architecture', 'Decision Systems', 'Engineering Leadership', 'Enterprise Scale']
+  },
+  {
     id: 'chandra-mouli',
     name: 'Chandra Mouli N.',
     role: 'Head of India Operations',
-    category: 'operations',
     categoryBadge: 'Operations Leadership',
     image: chandraMouliImg,
     imagePosition: 'center 12%',
@@ -71,25 +49,9 @@ export const teamMembers = [
     skills: ['Operations Leadership', 'Scale & Delivery', 'P&L Management', 'Global Expansion']
   },
   {
-    id: 'ganesh-ramamoorthy',
-    name: 'Ganesh Ramamoorthy',
-    role: 'Co-Founder, Chief Technology Officer, Member of the Board',
-    category: 'executive',
-    categoryBadge: 'Co-Founder & CTO',
-    image: ganeshImg,
-    imagePosition: 'center 15%',
-    imageScale: 1.0,
-    transformOrigin: 'center 15%',
-    experience: '30+ Years',
-    highlight: 'High-Impact Engineering & Applied AI Decision Systems',
-    bio: 'Ganesh Ramamoorthy is a seasoned software engineering leader with 30+ years of experience driving innovation and leading high-impact engineering teams. He was Senior Vice President of Engineering at nference, overseeing alliance management with health system partners, and previously led product development at Pramana and TiVo. His career spans leadership roles at Veveo, Motorola, and Privafy, delivering scalable solutions across healthcare, telecom, media, and data security.',
-    skills: ['Applied AI Architecture', 'Decision Systems', 'Engineering Leadership', 'Enterprise Scale']
-  },
-  {
     id: 'andrew-bates',
     name: 'Andrew Bates',
     role: 'Head of IT Infrastructure',
-    category: 'operations',
     categoryBadge: 'IT Infrastructure',
     image: andrewImg,
     imagePosition: 'center 38%',
@@ -104,7 +66,6 @@ export const teamMembers = [
     id: 'anish-desai',
     name: 'Anish Desai',
     role: 'Advisor, Platform & Infrastructure Architecture',
-    category: 'advisory',
     categoryBadge: 'Advisory Leadership',
     image: anishImg,
     imagePosition: 'center 18%',
@@ -119,7 +80,6 @@ export const teamMembers = [
     id: 'shivaji-neogi',
     name: 'Shivaji Neogi',
     role: 'Advisor, Product Delivery & Client Integration',
-    category: 'advisory',
     categoryBadge: 'Advisory Leadership',
     image: shivajiImg,
     imagePosition: 'center 22%',
@@ -134,7 +94,6 @@ export const teamMembers = [
     id: 'sharoon-saxena',
     name: 'Sharoon Saxena',
     role: 'Lead AI Architect',
-    category: 'engineering',
     categoryBadge: 'Lead AI Architect',
     image: sharoonImg,
     imagePosition: 'center 20%',
