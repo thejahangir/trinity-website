@@ -15,26 +15,26 @@ export default function FinalCTA({ onRequestDemo }) {
         </div>
 
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] tracking-tight text-white">
-          Let’s Talk About What’s Possible.
+          Engineering Scale at Trust™.
         </h2>
 
         <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
-          Explore how Trinity AI can help transform complex information into actionable intelligence.
+          Explore how Trinity AI Boston carries your matters from intake through to a defensible position with citations to the record.
         </p>
 
         {/* Action Buttons */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
-            onClick={() => onRequestDemo("General Inquiry")}
-            className="btn-primary py-4 px-9 text-base font-semibold group flex items-center justify-center gap-3 bg-trinity-blue hover:bg-trinity-deepBlue shadow-xl shadow-blue-950/50 w-full sm:w-auto"
+            onClick={() => onRequestDemo("Enterprise Briefing")}
+            className="btn-primary py-4 px-9 text-base font-semibold group flex items-center justify-center gap-3 bg-trinity-blue hover:bg-trinity-deepBlue shadow-xl shadow-blue-950/50 w-full sm:w-auto cursor-pointer"
           >
             <span>Request a Demo</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
 
           <button
-            onClick={() => onRequestDemo("Contact Inquiry")}
-            className="btn-secondary-dark py-4 px-8 text-base font-medium flex items-center justify-center gap-2 hover:bg-white/10 w-full sm:w-auto"
+            onClick={() => onRequestDemo("Executive Contact")}
+            className="btn-secondary-dark py-4 px-8 text-base font-medium flex items-center justify-center gap-2 hover:bg-white/10 w-full sm:w-auto cursor-pointer"
           >
             <Mail className="w-4 h-4 text-slate-400" />
             <span>Contact Us</span>
@@ -42,7 +42,7 @@ export default function FinalCTA({ onRequestDemo }) {
         </div>
 
         <div className="pt-8 text-xs text-slate-400">
-          Dedicated single-tenant environments • Zero training on customer data
+          Single tenant by design • ABA Formal Opinion 512 compliant • In production with Am Law 200
         </div>
 
       </div>

@@ -3,6 +3,7 @@ import VersionOne from './pages/VersionOne';
 import VersionTwo from './pages/VersionTwo';
 import VersionThree from './pages/VersionThree';
 import VersionFour from './pages/VersionFour';
+import AboutUsPage from './pages/AboutUsPage';
 import VersionSwitcher from './components/VersionSwitcher';
 import DemoModal from './components/DemoModal';
 import GoTopButton from './components/GoTopButton';
@@ -13,7 +14,7 @@ export default function App() {
     if (typeof window !== 'undefined') {
       try {
         localStorage.removeItem('trinity_active_version');
-      } catch (_e) {
+      } catch {
         // ignore
       }
 
@@ -27,6 +28,49 @@ export default function App() {
     // Default to Version 1 (Cinematic) when accessing the default URL
     return 'v1';
   });
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('page') === 'about') return 'about';
+      if (window.location.hash === '#about' || window.location.hash === '#about-us') return 'about';
+    }
+    return 'home';
+  });
+
+  // Keep browser URL, back/forward history, and hash synced with page state
+  useEffect(() => {
+    const handlePopState = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('page') === 'about' || window.location.hash === '#about' || window.location.hash === '#about-us') {
+        setCurrentPage('about');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handlePopState);
+    };
+  }, []);
+
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (page === 'about') {
+        url.searchParams.set('page', 'about');
+        window.history.pushState({}, '', url);
+      } else {
+        url.searchParams.delete('page');
+        window.history.pushState({}, '', url);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   // Ensure the Trinity logo favicon is active across all design versions
   useEffect(() => {
@@ -77,18 +121,27 @@ export default function App() {
         onVersionChange={handleVersionChange} 
       />
 
-      {/* Render Active Design Version */}
-      {activeVersion === 'v1' && (
-        <VersionOne onRequestDemo={handleOpenDemoModal} />
-      )}
-      {activeVersion === 'v2' && (
-        <VersionTwo onRequestDemo={handleOpenDemoModal} />
-      )}
-      {activeVersion === 'v3' && (
-        <VersionThree onRequestDemo={handleOpenDemoModal} />
-      )}
-      {activeVersion === 'v4' && (
-        <VersionFour onRequestDemo={handleOpenDemoModal} />
+      {/* Render Active View: Dedicated AboutUsPage or Homepage Versions */}
+      {currentPage === 'about' ? (
+        <AboutUsPage 
+          onNavigate={handleNavigate} 
+          onRequestDemo={handleOpenDemoModal} 
+        />
+      ) : (
+        <>
+          {activeVersion === 'v1' && (
+            <VersionOne onNavigate={handleNavigate} onRequestDemo={handleOpenDemoModal} />
+          )}
+          {activeVersion === 'v2' && (
+            <VersionTwo onRequestDemo={handleOpenDemoModal} />
+          )}
+          {activeVersion === 'v3' && (
+            <VersionThree onRequestDemo={handleOpenDemoModal} />
+          )}
+          {activeVersion === 'v4' && (
+            <VersionFour onRequestDemo={handleOpenDemoModal} />
+          )}
+        </>
       )}
 
       {/* Shared Enterprise Briefing Modal */}

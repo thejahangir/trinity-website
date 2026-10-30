@@ -16,13 +16,13 @@ export default function DifferentiationSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-950/80 border border-blue-800/40 text-trinity-lightBlue">
-            The Trinity Difference
+            The Trinity AI Boston Difference
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-white tracking-tight">
-            Beyond Generic AI.
+            Built Underneath the Work.
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-            Trinity combines artificial intelligence with domain expertise, evidence, reasoning, and human oversight to create intelligence systems designed for real-world decisions.
+            Trinity AI Boston combines artificial intelligence with insurance defense domain expertise, evidence reasoning, and mandatory attorney oversight to deliver positions you can defend in court.
           </p>
         </div>
 

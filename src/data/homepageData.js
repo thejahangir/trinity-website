@@ -1,172 +1,254 @@
 export const navLinks = [
-  { name: "About Us", href: "#about" },
-  { name: "Products", href: "#products" },
-  { name: "Technology", href: "#differentiation" },
-  { name: "Trust & Security", href: "#trust" },
-  { name: "Insights", href: "#insights" },
+  { name: "About Us", href: "#about", page: "about" },
+  { name: "The Cosmos Platform", href: "#products", page: "home" },
+  { name: "Technology", href: "#differentiation", page: "home" },
+  { name: "Trust & Compliance", href: "#trust", page: "home" },
+  // { name: "Research & Analysis", href: "#", page: "research" },
 ];
 
 export const capabilities = [
   {
-    id: "ai-intelligence",
-    title: "AI & Machine Intelligence",
-    description: "Building intelligent systems that process and understand complex, unstructured enterprise information with precision."
+    id: "insurance-defense",
+    title: "Insurance Defense Litigation",
+    description: "Built for matters where the output is signed by an attorney, filed with a court, and billed to a carrier that audits it."
   },
   {
-    id: "decision-intelligence",
-    title: "Decision Intelligence",
-    description: "Helping organizations turn raw information, evidence, and data into clearer insights and defensible decisions."
+    id: "record-reasoning",
+    title: "Reasoning on the Record",
+    description: "Extracting facts, reasoning across complex dockets, and citing primary authority rather than simple retrieval."
   },
   {
-    id: "domain-ai",
-    title: "Domain-Specific AI",
-    description: "Solutions designed around real-world industry problems, legal frameworks, and regulatory requirements rather than generic AI use cases."
+    id: "attorney-in-the-loop",
+    title: "Attorney in the Loop",
+    description: "ABA Formal Opinion 512 and Florida Bar Opinion 24-1 built into the workflow. Every output held for attorney approval."
   },
   {
-    id: "data-knowledge",
-    title: "Data & Knowledge Intelligence",
-    description: "Connecting disparate documents, evidence, and historical knowledge to surface actionable insights and relationships."
+    id: "citation-grounding",
+    title: "A Citation on Every Finding",
+    description: "Every assertion names the document, rule, statute, or opinion it rests on. If it cannot cite its source, it does not appear."
   },
   {
-    id: "ai-automation",
-    title: "AI Automation",
-    description: "Streamlining complex review, discovery, and analysis workflows through structured, intelligent automation."
+    id: "single-tenant",
+    title: "Single Tenant by Design",
+    description: "Dedicated client environments with bank-grade encryption. A client's record never shares an environment or retrains models."
   },
   {
-    id: "responsible-ai",
-    title: "Responsible AI",
-    description: "Building systems with transparent reasoning, continuous human oversight, and institutional enterprise governance."
+    id: "carrier-alignment",
+    title: "Carrier & Panel Firm Alignment",
+    description: "The carrier funds the defense; our platform satisfies both the attorney who signs the work and the carrier who pays for it."
   }
 ];
 
 export const products = [
   {
     id: "cosmos-one",
-    badge: "LITIGATION & CLAIMS",
-    name: "COSMOS ONE™",
-    description: "An AI-powered intelligence solution designed to help organizations manage complex claims, docket records, and litigation information.",
-    cta: "Explore Cosmos One →",
+    badge: "FIRST-PARTY PROPERTY",
+    name: "CosmosOne™",
+    description: "Carries a first-party property matter end to end, from first notice of loss through the statutory clock and into defense, with every assertion traced to the record.",
+    cta: "Explore CosmosOne™ →",
     href: "#products"
   },
   {
     id: "cosmos-nexus",
     badge: "CONSTRUCTION DEFECT DEFENSE",
-    name: "COSMOS NEXUS™",
-    description: "An intelligent platform designed to bring structure, insight, and decision support to complex construction defect defense matters.",
-    cta: "Explore Cosmos Nexus →",
+    name: "CosmosNexus™",
+    description: "Reads an entire defect file at terabyte scale and produces a defense position a partner can sign. Quantified exposure, liability caps, the apportionment position, and where the opposing expert's theory breaks down.",
+    cta: "Explore CosmosNexus™ →",
     href: "#products"
+  },
+  {
+    id: "cosmos-helios",
+    badge: "INTAKE & CONFLICTS",
+    name: "CosmosHelios™",
+    description: "Clears a new matter by reasoning about relationships rather than matching names, so conflicts are found rather than searched for.",
+    cta: "Explore CosmosHelios™ →",
+    href: "#products"
+  },
+  {
+    id: "cosmos-helix",
+    badge: "NURSING HOME & ASSISTED LIVING",
+    name: "Cosmos Helix™",
+    description: "Turns scanned and handwritten medical files into source-linked chronologies, with gaps in treatment and gaps in records surfaced rather than missed.",
+    cta: "Explore Cosmos Helix™ →",
+    href: "#products"
+  },
+  {
+    id: "cosmos-gravity",
+    badge: "AUDIT & COMPLIANCE",
+    name: "Cosmos Gravity™",
+    description: "Encodes counsel guidelines as enforced rules, so compliance is proven on demand rather than audited after the fact.",
+    cta: "Explore Cosmos Gravity™ →",
+    href: "#products"
+  }
+];
+
+export const whoWeBuildFor = [
+  {
+    id: "carriers",
+    title: "Insurance Carriers",
+    description: "Funding the defense with strict compliance oversight, auditable billing guidelines, and verified indemnity allocation."
+  },
+  {
+    id: "defense-firms",
+    title: "Panel Defense Firms",
+    description: "Producing defensible pleadings, quantified exposure positions, and source-grounded motions a partner can sign."
+  },
+  {
+    id: "in-house",
+    title: "In-House Legal Teams",
+    description: "Managing high-exposure claims portfolios, tracking statutory clocks, and enforcing institutional litigation risk controls."
   }
 ];
 
 export const industries = [
   {
     id: "legal",
-    title: "Legal & Litigation",
+    title: "Insurance Defense Panels",
     description: "Transforming discovery dockets, pleadings, and deposition archives into structured case intelligence."
   },
   {
     id: "insurance",
-    title: "Insurance & Claims",
-    description: "Analyzing high-exposure claim portfolios, coverage terms, and policy schedules with verifiable clarity."
+    title: "Carriers & Claims",
+    description: "Analyzing high-exposure claim portfolios, coverage terms, and statutory clocks with verifiable clarity."
   },
   {
     id: "construction",
-    title: "Construction & Infrastructure",
-    description: "Decoupling multi-party defect allegations, contract scopes, and trade specifications."
+    title: "Construction Defect Defense",
+    description: "Decoupling multi-party defect files, trade scopes, subcontractor tiers, and expert deposition theories."
   },
   {
     id: "risk",
-    title: "Enterprise Risk",
-    description: "Supporting regulatory inquiries, forensic audit trails, and corporate governance decisions."
+    title: "Enterprise Litigation Risk",
+    description: "Enforcing guidelines as code, managing defensible positions, and creating audit-ready compliance trails."
+  }
+];
+
+export const recordEngines = [
+  {
+    name: "Cortex",
+    role: "Reads the Written Record",
+    description: "Ingests pleadings, docket archives, contracts, coverage terms, and deposition transcripts with sub-second semantic precision."
+  },
+  {
+    name: "Polaris",
+    role: "Reads the Photographic Record",
+    description: "Processes job-site photography, defect inspections, architectural blueprints, and physical property evidence."
+  },
+  {
+    name: "Argus™",
+    role: "Adversarial Verification",
+    description: "Adversarially re-checks both written and photographic records to isolate contradictions before anything reaches an attorney."
   }
 ];
 
 export const differentiationPrinciples = [
   {
-    title: "Purpose-Built",
-    description: "Designed around specific business problems and domain workflows rather than horizontal chat interfaces."
+    title: "Purpose-Built for Defense",
+    description: "Engineered specifically for insurance defense litigation rather than horizontal retrieval or generic chat interfaces."
   },
   {
-    title: "Evidence-Based",
-    description: "Grounded in relevant enterprise information and primary evidence with verifiable source citations."
+    title: "Reasoning on the Record",
+    description: "We reason on the record rather than merely retrieving from it, isolating where the opposing expert's theory breaks down."
   },
   {
-    title: "Human-Centered",
-    description: "AI supports domain expertise and accelerates analysis rather than replacing human judgment and accountability."
+    title: "Attorney in the Loop",
+    description: "ABA Formal Opinion 512 and Florida Bar Opinion 24-1 built into the workflow. No output leaves without attorney approval."
   },
   {
-    title: "Enterprise-Ready",
-    description: "Built from the foundation with institutional security, tenant isolation, and strict governance in mind."
+    title: "Engineering Scale at Trust™",
+    description: "Single-tenant environments, ten provisional patent filings, and SOC 2 Type 1 independently attested."
   }
 ];
 
 export const approachSteps = [
   {
     step: "01",
-    title: "Understand",
-    description: "Ingesting complex, unstructured documents, dockets, contracts, and evidentiary records."
+    title: "Ingest & Extract",
+    description: "Cortex and Polaris ingest the entire record at terabyte scale—written dockets, medical files, contracts, and photographic evidence."
   },
   {
     step: "02",
-    title: "Connect",
-    description: "Linking disparate entities, timeline events, contract obligations, and evidentiary facts."
+    title: "Reason & Reconcile",
+    description: "Extracting facts, tracing timeline events, and analyzing relationships across multi-party pleadings and policy schedules."
   },
   {
     step: "03",
-    title: "Reason",
-    description: "Applying domain logic, precedent cross-referencing, and deterministic analysis to the evidence."
+    title: "Adversarial Verification",
+    description: "Argus™ adversarially re-checks the record, testing opposing expert theories and citing primary authority for every assertion."
   },
   {
     step: "04",
-    title: "Decide",
-    description: "Delivering explainable insights and defensible recommendations with expert human sign-off."
+    title: "Attorney Sign-Off",
+    description: "A defense position a partner can sign. Every output held for attorney approval before filing with court or billing to carrier."
   }
 ];
 
 export const trustPrinciples = [
   {
-    title: "Security",
-    description: "Dedicated single-tenant environments, customer data encryption, and strict access controls."
+    title: "Attorney in the Loop",
+    description: "ABA Formal Opinion 512 and Florida Bar Opinion 24-1 built into the workflow. No output leaves the system without attorney approval."
   },
   {
-    title: "Privacy",
-    description: "Zero customer data training. Your proprietary information is never used to retrain external foundation models."
+    title: "A Citation on Every Finding",
+    description: "Every assertion names the document, rule, statute, or opinion it rests on. If it cannot cite its source, it does not appear."
   },
   {
-    title: "Explainability",
-    description: "Transparent reasoning pathways that make every conclusion understandable and audit-ready."
+    title: "Single Tenant by Design",
+    description: "A client's record never shares an environment. Zero model retraining on customer data."
   },
   {
-    title: "Human Oversight",
-    description: "Configurable review gates ensure expert practitioners retain final authority over critical decisions."
+    title: "SOC 2 Type 1 Attested",
+    description: "Independently attested, August 2026. SOC 2 Type 2 observation period actively running."
   },
   {
-    title: "Governance",
-    description: "Comprehensive immutable audit logging and institutional compliance aligned with enterprise standards."
+    title: "Ten Provisional Patents",
+    description: "Filed with the USPTO covering human-in-the-loop gated pipelines, citation grounding, multi-modal extraction, and orchestration."
   },
   {
-    title: "Responsible AI",
-    description: "Deterministic grounding that eliminates hallucinated facts and upholds rigorous ethical benchmarks."
+    title: "In Production with Am Law 200",
+    description: "Deployed and running inside an Am Law 200 insurance defense firm, on live matters, in that firm's own environment."
   }
 ];
 
+export const leadership = [
+  {
+    name: "Jayashankar Nanjundaswamy",
+    title: "Co-Founder, President and Chief Executive Officer, Member of the Board"
+  },
+  {
+    name: "Ganesh Ramamoorthy",
+    title: "Co-Founder, Chief Technology Officer, Member of the Board"
+  }
+];
+
+export const companyLocations = {
+  headquarters: {
+    address: "2 Trinity Ct, Andover, MA 01810",
+    region: "Greater Boston, Massachusetts, USA"
+  },
+  engineeringCenter: {
+    address: "Bangalore, India",
+    region: "Engineering & Development Centre"
+  }
+};
+
 export const insights = [
   {
-    category: "AI & Enterprise",
-    title: "Moving Beyond the Chatbot: Why Enterprise Decisions Demand Deterministic AI",
-    description: "How high-stakes organizations are transitioning from probabilistic conversational tools to verifiable intelligence platforms.",
+    category: "Legal AI Governance",
+    title: "Operationalizing ABA Formal Opinion 512 in Insurance Defense Litigation",
+    description: "Why generative legal output requires deterministic citation grounding and mandatory attorney approval gates.",
     readTime: "5 min read"
   },
   {
-    category: "Responsible AI",
-    title: "The Explainability Imperative in High-Stakes Decision Support",
-    description: "Examining emerging legal, regulatory, and corporate governance standards for AI-assisted analysis and discovery.",
+    category: "Claims & Coverage",
+    title: "First-Party Property Defense: Tracing Every Assertion from First Notice of Loss",
+    description: "Navigating statutory clocks and claim documentation at enterprise scale with CosmosOne™.",
     readTime: "6 min read"
   },
   {
-    category: "Industry Intelligence",
-    title: "Structured Evidence in Complex Multi-Party Defense Litigation",
-    description: "How automated scope isolation and contract reconciliation bring mathematical precision to construction defect disputes.",
+    category: "Construction Defect",
+    title: "Multi-Party Construction Defect Defense: Decoupling Terabyte-Scale Files",
+    description: "How CosmosNexus™ isolates exposure caps, trade allocations, and expert deposition breakdowns.",
     readTime: "4 min read"
   }
 ];

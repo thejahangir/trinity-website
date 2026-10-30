@@ -9,13 +9,13 @@ export default function ApproachSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-50 text-trinity-blue border border-blue-100">
-            Our Approach
+            The Record Pipeline
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-trinity-ink tracking-tight">
-            From Information to Intelligence.
+            From the Record to a Defensible Position.
           </h2>
           <p className="text-base sm:text-lg text-trinity-slate leading-relaxed font-normal">
-            A clear, four-stage progression that transforms raw evidentiary data into defensible enterprise action.
+            One engine that ingests the record, extracts the facts, reasons on them, cites the authority, and routes every output to an attorney for approval.
           </p>
         </div>
 

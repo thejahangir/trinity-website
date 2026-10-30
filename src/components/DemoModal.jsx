@@ -96,13 +96,13 @@ export default function DemoModal({ isOpen, onClose, preselectedProduct = "Both"
                 onClick={handleReset}
                 className="btn-primary w-full"
               >
-                Return to Trinity AI
+                Return to Trinity AI Boston
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <p className="text-xs text-trinity-slate mb-4">
-                Schedule a confidential, data-driven walkthrough of Cosmos One™ or Cosmos Nexus™ tailored to your firm’s active litigation portfolio or exposure profile.
+                Schedule a confidential, data-driven walkthrough of the Cosmos platform and its practice lines tailored to your firm’s active litigation portfolio or exposure profile.
               </p>
 
               <div>
@@ -197,9 +197,12 @@ export default function DemoModal({ isOpen, onClose, preselectedProduct = "Both"
                       onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                       className="w-full pl-9 pr-3 py-2 text-sm bg-white border border-trinity-border rounded-lg text-trinity-ink focus:border-trinity-blue focus:ring-1 focus:ring-trinity-blue outline-none transition font-medium text-trinity-blue"
                     >
-                      <option value="Both Platforms">Both Platforms (Cosmos One & Nexus)</option>
-                      <option value="Cosmos One™ (Litigation & Claims)">Cosmos One™ (Litigation & Claims)</option>
-                      <option value="Cosmos Nexus™ (Construction Defect)">Cosmos Nexus™ (Construction Defect)</option>
+                      <option value="The Cosmos Platform">The Cosmos Platform (Enterprise Overview)</option>
+                      <option value="CosmosOne™ (First-Party Property)">CosmosOne™ (First-Party Property)</option>
+                      <option value="CosmosNexus™ (Construction Defect)">CosmosNexus™ (Construction Defect)</option>
+                      <option value="CosmosHelios™ (Intake & Conflicts)">CosmosHelios™ (Intake & Conflicts)</option>
+                      <option value="Cosmos Helix™ (Nursing Home & Medical)">Cosmos Helix™ (Nursing Home & Medical)</option>
+                      <option value="Cosmos Gravity™ (Audit & Compliance)">Cosmos Gravity™ (Audit & Compliance)</option>
                     </select>
                   </div>
                 </div>

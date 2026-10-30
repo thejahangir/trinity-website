@@ -85,10 +85,10 @@ export default function ProductEcosystem({ onRequestDemo }) {
 
               <div className="pt-2">
                 <button
-                  onClick={() => onRequestDemo("Cosmos One™ (Litigation & Claims)")}
+                  onClick={() => onRequestDemo("CosmosOne™ (First-Party Property)")}
                   className="btn-primary py-3 px-7 text-sm font-semibold"
                 >
-                  <span>Request Cosmos One Demo</span>
+                  <span>Request CosmosOne™ Demo</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
               </div>
@@ -218,10 +218,10 @@ export default function ProductEcosystem({ onRequestDemo }) {
 
                 <div className="pt-2">
                   <button
-                    onClick={() => onRequestDemo("Cosmos Nexus™ (Construction Defect)")}
+                    onClick={() => onRequestDemo("CosmosNexus™ (Construction Defect)")}
                     className="btn-primary py-3 px-7 text-sm font-semibold bg-trinity-blue hover:bg-trinity-deepBlue"
                   >
-                    <span>Request Cosmos Nexus Demo</span>
+                    <span>Request CosmosNexus™ Demo</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
                 </div>

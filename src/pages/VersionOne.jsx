@@ -8,19 +8,17 @@ import IndustriesSection from '../components/IndustriesSection';
 import DifferentiationSection from '../components/DifferentiationSection';
 import ApproachSection from '../components/ApproachSection';
 import TrustSection from '../components/TrustSection';
-import InsightsSection from '../components/InsightsSection';
-import AboutMissionSection from '../components/AboutMissionSection';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
 
-export default function VersionOne({ onRequestDemo }) {
+export default function VersionOne({ onNavigate, onRequestDemo }) {
   return (
     <div className="min-h-screen bg-trinity-canvas text-trinity-ink flex flex-col font-sans selection:bg-trinity-blue selection:text-white">
       {/* Sticky Enterprise Navigation Header */}
-      <Header onRequestDemo={onRequestDemo} />
+      <Header onNavigate={onNavigate} onRequestDemo={onRequestDemo} currentPage="home" />
 
       <main className="flex-grow">
-        {/* SECTION 01 — DARK HERO */}
+        {/* SECTION 01 — DARK HERO (SLIDER) */}
         <Hero onRequestDemo={onRequestDemo} />
 
         {/* SECTION 02 — LIGHT COMPANY / POSITIONING */}
@@ -29,7 +27,7 @@ export default function VersionOne({ onRequestDemo }) {
         {/* SECTION 03 — LIGHT CAPABILITIES */}
         <Capabilities />
 
-        {/* SECTION 04 — LIGHT PRODUCTS OVERVIEW */}
+        {/* SECTION 04 — LIGHT PRODUCTS OVERVIEW (THE COSMOS PLATFORM) */}
         <ProductsOverview onRequestDemo={onRequestDemo} />
 
         {/* SECTION 05 — LIGHT INDUSTRIES / USE CASES */}
@@ -41,21 +39,15 @@ export default function VersionOne({ onRequestDemo }) {
         {/* SECTION 07 — LIGHT HOW TRINITY APPROACHES AI */}
         <ApproachSection />
 
-        {/* SECTION 08 — LIGHT TRUST */}
+        {/* SECTION 08 — LIGHT TRUST & VERIFICATION */}
         <TrustSection />
 
-        {/* SECTION 09 — LIGHT INSIGHTS PREVIEW */}
-        <InsightsSection />
-
-        {/* SECTION 10 — LIGHT ABOUT / MISSION PREVIEW */}
-        <AboutMissionSection onRequestDemo={onRequestDemo} />
-
-        {/* SECTION 11 — DARK FINAL CTA */}
+        {/* SECTION 09 — DARK FINAL CTA */}
         <FinalCTA onRequestDemo={onRequestDemo} />
       </main>
 
       {/* Enterprise Footer */}
-      <Footer onRequestDemo={onRequestDemo} />
+      <Footer onNavigate={onNavigate} onRequestDemo={onRequestDemo} />
     </div>
   );
 }
